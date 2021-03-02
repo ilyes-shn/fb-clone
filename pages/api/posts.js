@@ -9,7 +9,10 @@ const db = fire.firestore()
 
 
 app.get((req, res) => {
-    db.collection('posts').get().then((snap) => {
+    db.collection('posts')
+    .orderBy("timestamp", "desc")
+    .get()
+    .then((snap) => {
         const posts = []
         snap.forEach((doc) => posts.push({id: doc.id, data: doc.data()}))
         console.log(posts)
