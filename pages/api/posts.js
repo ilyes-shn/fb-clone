@@ -9,8 +9,9 @@ const db = fire.firestore()
 
 
 app.get((req, res) => {
-    db.collection('posts')
-    .orderBy("timestamp", "desc")
+    db
+    .collection("posts")
+    .orderBy("", "desc")    
     .get()
     .then((snap) => {
         const posts = []
