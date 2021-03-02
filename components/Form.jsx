@@ -10,13 +10,15 @@ const Form = () => {
             caption,
             imageURL
         })
+        setCaption('')
+        setImageURL('')
     }
 
     return (
         <div className='form'>
-            <input type="text" placeholder='caption' onChange={(e) => setCaption(e.target.value)}/>
+            <input type="text" placeholder='caption' value={caption} onChange={(e) => setCaption(e.target.value)}/>
             <br/>
-            <input type="text" placeholder='Image URL' onChange={(e) => setImageURL(e.target.value)}/>
+            <input type="text" placeholder='Image URL' value={imageURL} onChange={(e) => setImageURL(e.target.value)}/>
             <br/>
             <button onClick={add}>Add Post</button>
             <style jsx>{`
